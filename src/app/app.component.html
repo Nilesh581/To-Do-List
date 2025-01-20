@@ -1,0 +1,11 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">Task Manager</a>
+  </div>
+</nav>
+
+<!-- Task Form Component -->
+<app-task-form [editingTask]="editingTask"></app-task-form>
+
+<!-- Task List Component -->
+<app-task-list (editTaskEvent)="onEditTask($event)"></app-task-list>

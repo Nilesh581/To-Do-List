@@ -1,0 +1,9 @@
+/* You can still add some custom styles if needed */
+.container {
+    max-width: 600px;
+  }
+  
+  textarea.form-control {
+    min-height: 150px;
+  }
+  

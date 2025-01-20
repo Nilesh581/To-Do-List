@@ -1,0 +1,73 @@
+<div class="container mt-5">
+    <h2 class="text-center">{{ editingTask ? 'Edit Task' : 'Add New Task' }}</h2>
+    <form (ngSubmit)="submitTask()">
+      <div class="row mb-3">
+        <label for="taskTitle" class="col-sm-2 col-form-label">What is to do:</label>
+        <div class="col-sm-10">
+          <input
+            id="taskTitle"
+            [(ngModel)]="taskTitle"
+            name="taskTitle"
+            class="form-control"
+            required
+          />
+        </div>
+      </div>
+  
+      <div class="row mb-3">
+        <label for="status" class="col-sm-2 col-form-label">Status:</label>
+        <div class="col-sm-10">
+          <select id="status" [(ngModel)]="taskStatus" name="status" class="form-select">
+            <option value="Not Started">Not Started</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </div>
+      </div>
+  
+      <div class="row mb-3">
+        <label for="dueDate" class="col-sm-2 col-form-label">Due Date:</label>
+        <div class="col-sm-10">
+          <input
+            type="date"
+            id="dueDate"
+            [(ngModel)]="taskDueDate"
+            name="dueDate"
+            class="form-control"
+            required
+          />
+        </div>
+      </div>
+  
+      <div class="row mb-3">
+        <label for="priority" class="col-sm-2 col-form-label">Priority:</label>
+        <div class="col-sm-10">
+          <select id="priority" [(ngModel)]="taskPriority" name="priority" class="form-select">
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+          </select>
+        </div>
+      </div>
+  
+      <div class="row mb-3">
+        <label for="description" class="col-sm-2 col-form-label">Description:</label>
+        <div class="col-sm-10">
+          <textarea
+            id="description"
+            [(ngModel)]="taskDescription"
+            name="description"
+            class="form-control"
+            required
+          ></textarea>
+        </div>
+      </div>
+  
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">
+          {{ editingTask ? 'Save Changes' : 'Add Task' }}
+        </button>
+      </div>
+    </form>
+  </div>
+  
